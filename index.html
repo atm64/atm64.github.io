@@ -1,33 +1,33 @@
 <!doctype html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>WISHARE</title>
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Styles -->
     <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <style>
-        *{
-            font-family: 'Montserrat', sans-serif !important;
-        }
-    </style>
-</head>
-<body>
     
 
-
 <style>
+    *{
+        font-family: 'Montserrat', sans-serif !important;
+    }
     html,body,main,#app{
         margin:0;
         padding:0;
@@ -71,7 +71,14 @@
         background-color: #d6e5e3;
         text-decoration: none;
     }
-    
+    .btn-verde{
+        background-color:#9fd8cb;
+        color:white;
+    }
+    .btn-verde-oscuro{
+        background-color:#517664;
+        color:white;
+    }
     .card-body{
         border:none;
         margin:10px 5px 5px 5px;
@@ -83,151 +90,156 @@
         background-color: white !important;
     }
 </style>
+</head>
+<body>
+    <div id="app">
 
+        <nav class="navbar navbar-expand-md sticky-top navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    WISHARE
+                </a>
+            </div>
+        </nav>
+        <div id="seccion1" class="mt-n4">
+            <div id="texto-hero">
+                <div class="row justify-content-center">
+                    <h1 class="text-center">Crea y comparte tus whishlist</h1>
+                    <p class="text-center">En wishare podras crear tus listas de productos y compartirlas con tus amigos.</p>
+                    <a href="#" class="btn btn-dark">Comienza</a>
+                </div>
+            </div>
+        </div>
 
-
-<div id="seccion1" class="mt-n4">
-    <div id="texto-hero">
-        <div class="row justify-content-center">
-            <h1 class="text-center">Crea y comparte tus whishlist</h1>
-            <p class="text-center">En wishare podras crear tus listas de productos y compartirlas con tus amigos.</p>
+        <div id="seccion2" class="container">
+            <div class="row mb-5">
+                <div class="col">
+                    <h2>Un lugar donde organizar tus compras online</h2>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 col-lg-6">
+                    <p>En wishare podrás organizar tus listas de productos e incluir los enlaces de estos mismos, para no perder los productos que te interesan.</p>
+                    <p>Porás crear wishlists públicas y privadas, para que compartirlas con tus seguidores sea más facil aún.</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <p>Además, podrás acceder a descuentos exclusivos sólo por pertenecer a nuestra comunidad.</p>
+                    <p>únete totalmente gratis, y podrás acceder a estas ofertas.</p>
+                </div>
+            </div>
         </div>
-        <div class="row justify-content-center">
-            <a href="{{ route('register') }}" class="btn btn-dark">Comienza</a>
-        </div>
-    </div>
-</div>
-
-<div id="seccion2" class="container">
-    <div class="row mb-5">
-        <div class="col">
-            <h2>Un lugar donde organizar tus compras online</h2>
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-12 col-lg-6">
-            <p>En wishare podrás organizar tus listas de productos e incluir los enlaces de estos mismos, para no perder los productos que te interesan.</p>
-            <p>Porás crear wishlists públicas y privadas, para que compartirlas con tus seguidores sea más facil aún.</p>
-        </div>
-        <div class="col-12 col-lg-6">
-            <p>Además, podrás acceder a descuentos exclusivos sólo por pertenecer a nuestra comunidad.</p>
-            <p>únete totalmente gratis, y podrás acceder a estas ofertas.</p>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div id="seccion3" class=" my-5 py-5 shadow">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-4">
-                    <img class="img-fluid" src="about_img2.jpg" alt="">
-                </div>
-                <div class="col-12 col-lg-8">
-                    <h2>Todas tus compras organizadas en un mismo lugar</h2>
-                    <p>Podrás organizar tus productos en whishlists y categorías, y guardar los que mas te gusten de otros usuarios.</p>
-                    <a href="{{ route('register') }}" class="btn btn-block btn-verde mt-1 d-block d-lg-none">Regístrate Gratis</a>
-                    <a href="{{ route('register') }}" class="btn btn-verde mt-1 d-none d-lg-inline-flex">Regístrate Gratis</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="seccion4" class="container">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 mb-5">
-                <h3 class="text-center">FAQ's</h3>
-            </div>
-            <div class="col-12 col-lg-8">
-                <a data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" class="card shadow p-3 answer mb-4">
-                    <h4 class="text-center text-dark">¿Cuántas wishlist podré crear como máximo?</h4>
-                </a>
-                <div class="" id="multiCollapseExample1">
-                    <div class="card card-body">
-                        No hay un límite establecido, por lo que podrás crear tantas wishlists y productos como quieras.
-                    </div>
-                </div>
-                <a data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2" class="card shadow p-3 answer mb-4">
-                    <h4 class="text-center text-dark">¿Es necesario algún plan premium para acceder a los descuentos?</h4>
-                </a>
-                <div class="" id="multiCollapseExample2">
-                    <div class="card card-body">
-                        Rotundamente no. Los descuentos están disponibles para todos los usuarios, estos aparecen en formato anuncio durante el uso de la app.
-                    </div>
-                </div>
-                <a data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3" class="card shadow p-3 answer mb-4">
-                    <h4 class="text-center text-dark">¿De qué tiendas ofreceis los descuentos?</h4>
-                </a>
-                <div class="" id="multiCollapseExample3">
-                    <div class="card card-body">
-                        Disponemos de una gran cantidad de partners, por lo que la variedad en nuestros descuentos es muy diversa.
-                        ¡Regístrate Gratis y descubre a nuestros partners!
-                    </div>
-                </div>
-                <a data-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample4" class="card shadow p-3 answer mb-4">
-                    <h4 class="text-center text-dark">¿Cómo puedo evitar que otros usuarios se enteren de lo que publico en mis wishlists?</h4>
-                </a>
-                <!-- collapse multi-collapse -->
-                <div class="" id="multiCollapseExample4">
-                    <div class="card card-body">
-                        Podrás gestionar la visibilidad de tus wishlists a tu antojo, por lo que si quieres que una de tus wishlists sea privada, podrás cambiar su visibilidad instantaneamente.
+            <div id="seccion3" class=" my-5 py-5 shadow">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-4">
+                            <img class="img-fluid" src="about_img2.jpg" alt="">
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <h2>Todas tus compras organizadas en un mismo lugar</h2>
+                            <p>Podrás organizar tus productos en whishlists y categorías, y guardar los que mas te gusten de otros usuarios.</p>
+                            <a href="#" class="btn btn-block btn-verde mt-1 d-block d-lg-none">Regístrate Gratis</a>
+                            <a href="#" class="btn btn-verde mt-1 d-none d-lg-inline-flex">Regístrate Gratis</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div id="seccion5">
-    <div class="container">
-        <div class="row py-4">
-            <div class="col-12 col-lg-6">
-                <img src="about_img1.jpg" alt="" class="img-fluid">
-                <div class="d-block d-lg-none" style="height:50px;"></div>
+        <div id="seccion4" class="container">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 mb-5">
+                        <h3 class="text-center">FAQ's</h3>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <a data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" class="card shadow p-3 answer mb-4">
+                            <h4 class="text-center text-dark">¿Cuántas wishlist podré crear como máximo?</h4>
+                        </a>
+                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                            <div class="card card-body">
+                                No hay un límite establecido, por lo que podrás crear tantas wishlists y productos como quieras.
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2" class="card shadow p-3 answer mb-4">
+                            <h4 class="text-center text-dark">¿Es necesario algún plan premium para acceder a los descuentos?</h4>
+                        </a>
+                        <div class="collapse multi-collapse" id="multiCollapseExample2">
+                            <div class="card card-body">
+                                Rotundamente no. Los descuentos están disponibles para todos los usuarios, estos aparecen en formato anuncio durante el uso de la app.
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3" class="card shadow p-3 answer mb-4">
+                            <h4 class="text-center text-dark">¿De qué tiendas ofreceis los descuentos?</h4>
+                        </a>
+                        <div class="collapse multi-collapse" id="multiCollapseExample3">
+                            <div class="card card-body">
+                                Disponemos de una gran cantidad de partners, por lo que la variedad en nuestros descuentos es muy diversa.
+                                ¡Regístrate Gratis y descubre a nuestros partners!
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample4" class="card shadow p-3 answer mb-4">
+                            <h4 class="text-center text-dark">¿Cómo puedo evitar que otros usuarios se enteren de lo que publico en mis wishlists?</h4>
+                        </a>
+                        <div class="collapse multi-collapse" id="multiCollapseExample4">
+                            <div class="card card-body">
+                                Podrás gestionar la visibilidad de tus wishlists a tu antojo, por lo que si quieres que una de tus wishlists sea privada, podrás cambiar su visibilidad instantaneamente.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-lg-6">
-                <h3>Accede instantaneamente a tus productos</h3>
-                <p>
-                    Añade el enlace de tu tienda de confianza, y guardalo para revisarlo en futuras ocasiones, con esto ahorrarás tiempo y te será mas facil revisar si hay cambios en el precio del producto.
+        </div>
+
+        <div id="seccion5">
+            <div class="container">
+                <div class="row py-4">
+                    <div class="col-12 col-lg-6">
+                        <img src="about_img1.jpg" alt="" class="img-fluid">
+                        <div class="d-block d-lg-none" style="height:50px;"></div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <h3>Accede instantaneamente a tus productos</h3>
+                        <p>
+                            Añade el enlace de tu tienda de confianza, y guardalo para revisarlo en futuras ocasiones, con esto ahorrarás tiempo y te será mas facil revisar si hay cambios en el precio del producto.
+                        </p>
+                        <p>
+                            Con el sistema de organizacion de productos de wishare por categorías, podrás acceder a los productos de la forma más rápida.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="">
+        <!-- Footer -->
+        <footer class="text-center text-dark bg-light">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+            <!-- Section: CTA -->
+            <section class="">
+                <p class="d-flex justify-content-center align-items-center">
+                <span class="mr-3">Regístrate Gratis</span>
+                <a href="#" type="button" class="btn btn-outline-dark btn-rounded">
+                    ¡Unirme!
+                </a>
                 </p>
-                <p>
-                    Con el sistema de organizacion de productos de wishare por categorías, podrás acceder a los productos de la forma más rápida.
-                </p>
+            </section>
+            <!-- Section: CTA -->
             </div>
-        </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-dark" href="/">Wishare</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+        </section>
     </div>
-</div>
 
-<section class="">
-  <!-- Footer -->
-  <footer class="text-center text-dark bg-light">
-    <!-- Grid container -->
-    <div class="container p-4 pb-0">
-      <!-- Section: CTA -->
-      <section class="">
-        <p class="d-flex justify-content-center align-items-center">
-          <span class="mr-3">Regístrate Gratis</span>
-          <a href="{{ route('register') }}" type="button" class="btn btn-outline-dark btn-rounded">
-            ¡Unirme!
-          </a>
-        </p>
-      </section>
-      <!-- Section: CTA -->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2021 Copyright:
-      <a class="text-dark" href="/">Wishare</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-</section>
-
-
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
-</html>
